@@ -16,6 +16,7 @@ import Paper from '@mui/material/Paper';
 import PaidIcon from '@mui/icons-material/Paid';
 import { BarChart } from '@mui/x-charts/BarChart';
 import { PieChart } from '@mui/x-charts/PieChart';
+import Grid from '@mui/material/Grid';
 
 
 export default function DashboardPage() {
@@ -67,15 +68,17 @@ export default function DashboardPage() {
                 borderRadius: '5px'
             }}>
             <h3 style={{marginTop:'0px'}}>Resumen</h3>
-            <Box sx={{
+            <Grid sx={{
                 width: '100%',
                 display: 'flex'
-            }}>
-                <Box sx={{
-                    width: '50%'
-                }}>
+            }}
+            container>
+                <Grid item xs={12} md={12} lg={6}>
                     <h4 style={{marginTop:'0px'}}>Ingresos: <span style={{color: '#83B4FF'}}>$450,000 USD</span></h4>
-                    <Box>
+                    <Box
+                        sx={{
+                            height: '10rem'
+                        }}>
                         <PieChart
                             colors={['#83B4FF', '#5A72A0', '#1A2130']}
                             series={[
@@ -87,16 +90,14 @@ export default function DashboardPage() {
                                     ],
                                 },
                             ]}
-                            width={700}
-                            height={200}
                         />
                     </Box>
-                </Box>
-                <Box sx={{
-                    width: '50%'
-                }}>
+                </Grid>
+                <Grid item xs={12} md={12} lg={6}>
                     <h4 style={{marginTop:'0px'}}>Engresos: <span style={{color: '#83B4FF'}}>$450,000 USD</span></h4>
-                    <Box>
+                    <Box sx={{
+                        height: '10rem'
+                    }}>
                         <PieChart
                             colors={['#FFEEA9', '#FFBF78', '#FF7D29']}
                             series={[
@@ -108,12 +109,10 @@ export default function DashboardPage() {
                                     ],
                                 },
                             ]}
-                            width={700}
-                            height={200}
                         />
                     </Box>
-                </Box>
-            </Box>
+                </Grid>
+            </Grid>
             <Box sx={{
                 width: '100%',
                 display: 'flex'
@@ -204,18 +203,14 @@ export default function DashboardPage() {
         }}>
             <Box>
                 <h3 style={{marginTop:'0px'}}>Operaciones</h3>
-                <Box sx={{
-                    display: 'flex',
-                    justifyContent: 'space-between'
-                }}>
-                    <Box sx={{
+                <Grid sx={{}} container>
+                    <Grid sx={{
                         boxSizing: 'border-box',
                         padding: '1.5rem',
                         border: '1px solid #C7C7C7',
-                        width: '30%',
                         display: 'flex',
                         borderRadius: '5px'
-                    }}>
+                    }} item xs={12} md={6} lg={4}>
                         <Box sx={{
                             display: 'flex',
                             justifyContent: 'center',
@@ -249,15 +244,14 @@ export default function DashboardPage() {
                                 right: '-3rem'
                             }}>NEW</Box>
                         </Box>
-                    </Box>
-                    <Box sx={{
+                    </Grid>
+                    <Grid sx={{
                         boxSizing: 'border-box',
                         padding: '1.5rem',
                         border: '1px solid #C7C7C7',
-                        width: '30%',
                         display: 'flex',
                         borderRadius: '5px'
-                    }}>
+                    }}  item xs={12} md={6} lg={4}>
                         <Box sx={{
                             display: 'flex',
                             justifyContent: 'center',
@@ -278,15 +272,14 @@ export default function DashboardPage() {
                                     color: '#9E9E9E'
                                 }}>(Respuesta inmediata)</Box>
                         </Box>
-                    </Box>
-                    <Box sx={{
+                    </Grid>
+                    <Grid sx={{
                         boxSizing: 'border-box',
                         padding: '1.5rem',
                         border: '1px solid #C7C7C7',
-                        width: '30%',
                         display: 'flex',
                         borderRadius: '5px'
-                    }}>
+                    }}  item xs={12} md={6} lg={4}>
                         <Box sx={{
                             display: 'flex',
                             justifyContent: 'center',
@@ -307,8 +300,8 @@ export default function DashboardPage() {
                                     color: '#9E9E9E'
                                 }}>(En cualquier divisa)</Box>
                         </Box>
-                    </Box>
-                </Box>
+                    </Grid>
+                </Grid>
             </Box>
         </Box>
     </Box>
