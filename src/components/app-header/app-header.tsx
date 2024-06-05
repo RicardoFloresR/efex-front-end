@@ -17,7 +17,7 @@ export default function AppHeader() {
             borderBottom: '1px solid #C7C7C7'
     }}
     >
-        <Box>3 de Marzo de 2024. 18:00:00 GMT-5</Box>
+        <Box>Último acceso: 3 de Junio de 2024, 18:00:00 GMT-5</Box>
         <Box
             sx={{
                 display: 'flex'
