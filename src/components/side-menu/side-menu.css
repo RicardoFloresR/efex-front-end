@@ -1,0 +1,15 @@
+.menu-icon {
+    display: flex;
+    justify-content: center;
+}
+.menu-icon img{
+    max-width: 70%;
+    width: auto;
+}
+
+.menu-item {
+    color: #00143A;
+}
+.menu-item svg {
+    color: #A9D2FF;
+}
