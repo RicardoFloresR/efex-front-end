@@ -2,6 +2,8 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import FlagIcon from '@mui/icons-material/Flag';
 import PaidIcon from '@mui/icons-material/Paid';
+import LocalAtmIcon from '@mui/icons-material/LocalAtm';
+import { BarChart } from '@mui/x-charts/BarChart';
 export default function DashboardPage() {
     const balances = [
         {
@@ -34,7 +36,7 @@ export default function DashboardPage() {
                     <Box sx={{
                         fontSize: '16px',
                         marginBottom: '0.5rem'
-                    }}>Balance combinado</Box>
+                    }}>Balance General</Box>
                     <Box sx={{
                         fontSize: '32px',
                         color: '#006BF8',
@@ -75,7 +77,7 @@ export default function DashboardPage() {
                         alignItems: 'center',
                         width: '25%',
                         boxSizing: 'border-box',
-                        padding: '0.5rem',
+                        padding: '2rem',
                         border: '1px solid #C7C7C7'
                     }}>
                         <Box sx={{
@@ -108,11 +110,117 @@ export default function DashboardPage() {
                 })}
             </Box>
         </Box>
-        <Box>
-            <Box>
-                <Box><PaidIcon/></Box>
+        <Box sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            marginTop: '1rem'
+        }}>
+            <Box sx={{
+                boxSizing: 'border-box',
+                padding: '1.5rem',
+                border: '1px solid #C7C7C7',
+                width: '45%',
+                display: 'flex',
+                backgroundColor: 'white'
+            }}>
+                <Box sx={{
+                    width: '3rem',
+                    height: '3rem',
+                    backgroundColor: 'gray',
+                    borderRadius: '2rem',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}><PaidIcon/></Box>
+                <Box sx={{
+                    position: 'relative',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    marginLeft: '2rem'
+                }}>
+                    <Box sx={{
+                        fontSize: '21px',
+                        color: '#00143A'
+                    }}>Crédito para adelanto</Box>
+                    <Box
+                    sx={{
+                        color: '#9E9E9E'
+                    }}>(Pago a proveedores)</Box>
+                    <Box sx={{
+                        color: 'white',
+                        backgroundColor: '#006BF8',
+                        fontSize: '10px',
+                        display: 'flex',
+                        width: 'auto',
+                        padding: '5px 7px',
+                        boxSizing: 'border-box',
+                        borderRadius: '10px',
+                        position: 'absolute',
+                        top: '0',
+                        right: '-3rem'
+                    }}>NEW</Box>
+                </Box>
+            </Box>
+            <Box sx={{
+                display: 'flex',
+                alignItems: 'center',
+                boxSizing: 'border-box',
+                padding: '1.5rem',
+                border: '1px solid #FFA412',
+                width: '45%',
+                backgroundColor: 'white'
+            }}>
                 <Box>
-                    Button random
+                    <LocalAtmIcon style={{color: '#FFA412'}}/>
+                </Box>
+                <Box sx={{
+                    fontSize: '21px',
+                    color: '#00143A',
+                    marginLeft: '2rem'
+                }}>
+                    Enviar pago
+                </Box>
+            </Box>
+        </Box>
+        <Box sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            marginTop: '1rem'
+        }}>
+            <Box sx={{
+                width: '45%',
+                backgroundColor: 'white'
+            }}>
+                <Box>
+                    <Box>
+                        Ingresos en:
+                        <Box>(Enero)</Box>
+                    </Box>
+                    <Box>
+                        <Button>Ver detalles</Button>
+                    </Box>
+                </Box>
+                <Box>
+                    <Box>$4,250,000 MXN</Box>
+                </Box>
+                <Box>
+                    <BarChart
+                        series={[
+                            { data: [35, 44, 24, 34] }
+                        ]}
+                        height={290}
+                        xAxis={[{ data: ['Semana 1', 'Semana 2', 'Semana 3', 'Semana 4'], scaleType: 'band' }]}
+                        yAxis={[{
+                            label: "MDP (MXN)",
+                            colorMap: {
+                                type: 'continuous',
+                                min: -10,
+                                max: 10,
+                                color: ['red', 'red'],
+                            }
+                        }]}
+                        margin={{ top: 10, bottom: 30, left: 40, right: 10 }}
+                    />
                 </Box>
             </Box>
         </Box>
