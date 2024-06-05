@@ -63,7 +63,8 @@ export default function DashboardPage() {
                 boxSizing: 'border-box',
                 padding: '1rem',
                 backgroundColor: 'white',
-                marginBottom: '2rem'
+                marginBottom: '2rem',
+                borderRadius: '5px'
             }}>
             <h3 style={{marginTop:'0px'}}>Resumen</h3>
             <Box sx={{
@@ -141,7 +142,8 @@ export default function DashboardPage() {
             boxSizing: 'border-box',
             padding: '1rem',
             backgroundColor: 'white',
-            marginBottom: '2rem'
+            marginBottom: '2rem',
+            borderRadius: '5px'
         }}>
             <Box>
                 <h3 style={{marginTop:'0px'}}>Balances</h3>
@@ -197,7 +199,8 @@ export default function DashboardPage() {
             boxSizing: 'border-box',
             padding: '1rem',
             backgroundColor: 'white',
-            marginBottom: '2rem'
+            marginBottom: '2rem',
+            borderRadius: '5px'
         }}>
             <Box>
                 <h3 style={{marginTop:'0px'}}>Operaciones</h3>
@@ -211,7 +214,7 @@ export default function DashboardPage() {
                         border: '1px solid #C7C7C7',
                         width: '30%',
                         display: 'flex',
-                        backgroundColor: 'white'
+                        borderRadius: '5px'
                     }}>
                         <Box sx={{
                             display: 'flex',
@@ -253,7 +256,7 @@ export default function DashboardPage() {
                         border: '1px solid #C7C7C7',
                         width: '30%',
                         display: 'flex',
-                        backgroundColor: 'white'
+                        borderRadius: '5px'
                     }}>
                         <Box sx={{
                             display: 'flex',
@@ -282,7 +285,7 @@ export default function DashboardPage() {
                         border: '1px solid #C7C7C7',
                         width: '30%',
                         display: 'flex',
-                        backgroundColor: 'white'
+                        borderRadius: '5px'
                     }}>
                         <Box sx={{
                             display: 'flex',
