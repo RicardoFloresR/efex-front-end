@@ -19,6 +19,8 @@ import { PieChart } from '@mui/x-charts/PieChart';
 import Grid from '@mui/material/Grid';
 import {useTranslation} from "react-i18next";
 
+import './dashboard-page.css';
+
 
 export default function DashboardPage() {
 
@@ -78,10 +80,7 @@ export default function DashboardPage() {
             container>
                 <Grid item xs={12} md={12} lg={6}>
                     <h4 style={{marginTop:'0px'}}>{t("pages.dashboard.sections.summary.income.title")}: <span style={{color: '#83B4FF'}}>$450,000 USD</span></h4>
-                    <Box
-                        sx={{
-                            height: '10rem'
-                        }}>
+                    <Box className={'summary-pie-chart'}>
                         <PieChart
                             colors={['#83B4FF', '#5A72A0', '#1A2130']}
                             series={[
@@ -98,9 +97,7 @@ export default function DashboardPage() {
                 </Grid>
                 <Grid item xs={12} md={12} lg={6}>
                     <h4 style={{marginTop:'0px'}}>{t("pages.dashboard.sections.summary.expenses.title")}: <span style={{color: '#83B4FF'}}>$450,000 USD</span></h4>
-                    <Box sx={{
-                        height: '10rem'
-                    }}>
+                    <Box className={'summary-pie-chart'}>
                         <PieChart
                             colors={['#FFEEA9', '#FFBF78', '#FF7D29']}
                             series={[
@@ -119,7 +116,8 @@ export default function DashboardPage() {
             <Box sx={{
                 width: '100%',
                 display: 'flex'
-            }}>
+            }}
+                 className={'summary-bar-chart'}>
                 <BarChart
                     dataset={incomeOutcome}
                     yAxis={[{ scaleType: 'band', dataKey: 'type', colorMap: {
@@ -133,8 +131,6 @@ export default function DashboardPage() {
                             label: `${t("pages.dashboard.sections.summary.graph.x-label")} (USD)`
                         }
                     ]}
-                    width={800}
-                    height={150}
                 />
             </Box>
         </Box>

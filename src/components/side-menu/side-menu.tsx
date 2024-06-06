@@ -1,4 +1,3 @@
-// import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';
@@ -13,6 +12,7 @@ import ReceiptIcon from '@mui/icons-material/Receipt';
 import ContactsIcon from '@mui/icons-material/Contacts';
 import LockIcon from '@mui/icons-material/Lock';
 import {useTranslation} from "react-i18next";
+import './side-menu.css';
 
 export default function SideMenu() {
 
@@ -27,7 +27,7 @@ export default function SideMenu() {
     }
 
     return (
-        <div>
+        <div className={'side-menu'}>
             <Box
                 sx={{ width: 250, borderRight: '1px solid #C7C7C7', height: '100vh', backgroundColor: '#FBFCFF', display: 'flex', flexDirection: 'column'}}
                 role="presentation"

@@ -1,0 +1,10 @@
+.summary-bar-chart {
+    width: 100%;
+    height: 150px;
+    box-sizing: border-box;
+    padding: 0 2rem;
+}
+.summary-pie-chart {
+    height: 12rem;
+    font-size: 5px!important;
+}
