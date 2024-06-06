@@ -1,5 +1,11 @@
+.main-frame {
+    width: calc(100vw - 251px);
+    height: 100%;
+    maxHeight: 100vh;
+    overflow: hidden
+}
 @media only screen and (max-width: 899px) {
     .main-frame {
-        width: 100%;
+        width: 100vw!important;
     }
 }
