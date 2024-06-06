@@ -12,14 +12,18 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import ReceiptIcon from '@mui/icons-material/Receipt';
 import ContactsIcon from '@mui/icons-material/Contacts';
 import LockIcon from '@mui/icons-material/Lock';
+import {useTranslation} from "react-i18next";
 
 export default function SideMenu() {
+
+    const [t] = useTranslation("global");
+
     const menuOptions = {
-        ['Dashboard']: <DashboardIcon style={{color: '#5A72A0'}} />,
-        ['Ingresos']: <ReceiptIcon style={{color: '#5A72A0'}} />,
-        ['Egresos']: <ReceiptIcon style={{color: '#5A72A0'}} />,
-        ['Contactos']: <ContactsIcon style={{color: '#5A72A0'}} />,
-        ['Seguridad']: <LockIcon style={{color: '#5A72A0'}} />,
+        [t("side-menu.option1")]: <DashboardIcon style={{color: '#5A72A0'}} />,
+        [t("side-menu.option2")]: <ReceiptIcon style={{color: '#5A72A0'}} />,
+        [t("side-menu.option3")]: <ReceiptIcon style={{color: '#5A72A0'}} />,
+        [t("side-menu.option4")]: <ContactsIcon style={{color: '#5A72A0'}} />,
+        [t("side-menu.option5")]: <LockIcon style={{color: '#5A72A0'}} />,
     }
 
     return (
@@ -56,7 +60,7 @@ export default function SideMenu() {
                         }}
                     >
                         <Button sx={{width: '90%'}} variant={'contained'} color={'blue'} startIcon={<CoPresentIcon />}>
-                            Refiere y Gana!
+                            {t("side-menu.button")}!
                         </Button>
                     </Box>
                 </Box>

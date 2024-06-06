@@ -17,31 +17,34 @@ import PaidIcon from '@mui/icons-material/Paid';
 import { BarChart } from '@mui/x-charts/BarChart';
 import { PieChart } from '@mui/x-charts/PieChart';
 import Grid from '@mui/material/Grid';
+import {useTranslation} from "react-i18next";
 
 
 export default function DashboardPage() {
 
+    const [t] = useTranslation("global");
+
     const balances = [
         {
-            currency: 'Dólar Estadounidense (USD)',
+            currency: t("pages.dashboard.sections.balance.table.rows.currencies.usd"),
             amount: 1000000
         }, {
-            currency: 'Peso Mexicano (MXN)',
+            currency: t("pages.dashboard.sections.balance.table.rows.currencies.mxn"),
             amount: 1000000
         }, {
-            currency: 'Peso Colombiano (COP)',
+            currency: t("pages.dashboard.sections.balance.table.rows.currencies.cop"),
             amount: 1000000
         }, {
-            currency: 'Balance Combinado',
+            currency: t("pages.dashboard.sections.balance.table.rows.combined-balance"),
             amount: 1100000
         }
     ];
 
     const incomeOutcome = [{
-        type: 'Ingresos',
+        type: t("pages.dashboard.sections.summary.graph.y-labels.0"),
         amount: 1450000
     }, {
-        type: 'Egresos',
+        type: t("pages.dashboard.sections.summary.graph.y-labels.1"),
         amount: 450000
     }]
 
@@ -67,14 +70,14 @@ export default function DashboardPage() {
                 marginBottom: '2rem',
                 borderRadius: '5px'
             }}>
-            <h3 style={{marginTop:'0px'}}>Resumen</h3>
+            <h3 style={{marginTop:'0px'}}>{t("pages.dashboard.sections.summary.title")}</h3>
             <Grid sx={{
                 width: '100%',
                 display: 'flex'
             }}
             container>
                 <Grid item xs={12} md={12} lg={6}>
-                    <h4 style={{marginTop:'0px'}}>Ingresos: <span style={{color: '#83B4FF'}}>$450,000 USD</span></h4>
+                    <h4 style={{marginTop:'0px'}}>{t("pages.dashboard.sections.summary.income.title")}: <span style={{color: '#83B4FF'}}>$450,000 USD</span></h4>
                     <Box
                         sx={{
                             height: '10rem'
@@ -84,9 +87,9 @@ export default function DashboardPage() {
                             series={[
                                 {
                                     data: [
-                                        { id: 0, value: 150000, label: 'Ingresos por nómina' },
-                                        { id: 1, value: 100000, label: 'Transferencias Recibidas' },
-                                        { id: 2, value: 200000, label: 'Cash Back' },
+                                        { id: 0, value: 150000, label: t("pages.dashboard.sections.summary.income.income1") },
+                                        { id: 1, value: 100000, label: t("pages.dashboard.sections.summary.income.income2") },
+                                        { id: 2, value: 200000, label: t("pages.dashboard.sections.summary.income.income3") },
                                     ],
                                 },
                             ]}
@@ -94,7 +97,7 @@ export default function DashboardPage() {
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={12} lg={6}>
-                    <h4 style={{marginTop:'0px'}}>Engresos: <span style={{color: '#83B4FF'}}>$450,000 USD</span></h4>
+                    <h4 style={{marginTop:'0px'}}>{t("pages.dashboard.sections.summary.expenses.title")}: <span style={{color: '#83B4FF'}}>$450,000 USD</span></h4>
                     <Box sx={{
                         height: '10rem'
                     }}>
@@ -103,9 +106,9 @@ export default function DashboardPage() {
                             series={[
                                 {
                                     data: [
-                                        { id: 0, value: 150000, label: 'Pagos con TDD' },
-                                        { id: 1, value: 100000, label: 'Pagos Domiciliados' },
-                                        { id: 2, value: 200000, label: 'Pagos de Tarjetas' }
+                                        { id: 0, value: 150000, label: t("pages.dashboard.sections.summary.expenses.expense1") },
+                                        { id: 1, value: 100000, label: t("pages.dashboard.sections.summary.expenses.expense2") },
+                                        { id: 2, value: 200000, label: t("pages.dashboard.sections.summary.expenses.expense3") }
                                     ],
                                 },
                             ]}
@@ -127,7 +130,7 @@ export default function DashboardPage() {
                     layout="horizontal"
                     xAxis={[
                         {
-                            label: 'Monto (USD)'
+                            label: `${t("pages.dashboard.sections.summary.graph.x-label")} (USD)`
                         }
                     ]}
                     width={800}
@@ -145,15 +148,15 @@ export default function DashboardPage() {
             borderRadius: '5px'
         }}>
             <Box>
-                <h3 style={{marginTop:'0px'}}>Balances</h3>
+                <h3 style={{marginTop:'0px'}}>{t("pages.dashboard.sections.balance.title")}</h3>
                 <Box>
                     <TableContainer component={Paper}>
                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow>
-                                    <TableCell>Moneda</TableCell>
-                                    <TableCell align="left">Cantidad</TableCell>
-                                    <TableCell align="center">Opciones</TableCell>
+                                    <TableCell>{t("pages.dashboard.sections.balance.table.headers.currency")}</TableCell>
+                                    <TableCell align="left">{t("pages.dashboard.sections.balance.table.headers.amount")}</TableCell>
+                                    <TableCell align="center">{t("pages.dashboard.sections.balance.table.headers.options")}</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
@@ -179,10 +182,10 @@ export default function DashboardPage() {
                                                     'aria-labelledby': 'basic-button',
                                                 }}
                                             >
-                                                <MenuItem onClick={handleClose}>Enviar Pago</MenuItem>
-                                                <MenuItem onClick={handleClose}>Añadir fondos</MenuItem>
-                                                <MenuItem onClick={handleClose}>Convertir</MenuItem>
-                                                <MenuItem onClick={handleClose}>Retiros</MenuItem>
+                                                <MenuItem onClick={handleClose}>{t("pages.dashboard.sections.balance.table.options.option1")}</MenuItem>
+                                                <MenuItem onClick={handleClose}>{t("pages.dashboard.sections.balance.table.options.option2")}</MenuItem>
+                                                <MenuItem onClick={handleClose}>{t("pages.dashboard.sections.balance.table.options.option3")}</MenuItem>
+                                                <MenuItem onClick={handleClose}>{t("pages.dashboard.sections.balance.table.options.option4")}</MenuItem>
                                             </Menu>
                                             </TableCell>
                                     </TableRow>
@@ -202,7 +205,7 @@ export default function DashboardPage() {
             borderRadius: '5px'
         }}>
             <Box>
-                <h3 style={{marginTop:'0px'}}>Operaciones</h3>
+                <h3 style={{marginTop:'0px'}}>{t("pages.dashboard.sections.operations.title")}</h3>
                 <Grid sx={{}} container>
                     <Grid sx={{
                         boxSizing: 'border-box',
@@ -225,11 +228,11 @@ export default function DashboardPage() {
                             <Box sx={{
                                 fontSize: '21px',
                                 color: '#00143A'
-                            }}>Crédito para adelanto</Box>
+                            }}>{t("pages.dashboard.sections.operations.operation1.title")}</Box>
                             <Box
                                 sx={{
                                     color: '#9E9E9E'
-                                }}>(Pago a proveedores)</Box>
+                                }}>({t("pages.dashboard.sections.operations.operation1.subtitle")})</Box>
                             <Box sx={{
                                 color: 'white',
                                 backgroundColor: '#006BF8',
@@ -266,11 +269,11 @@ export default function DashboardPage() {
                             <Box sx={{
                                 fontSize: '21px',
                                 color: '#00143A'
-                            }}>Solicitar Crédito</Box>
+                            }}>{t("pages.dashboard.sections.operations.operation2.title")}</Box>
                             <Box
                                 sx={{
                                     color: '#9E9E9E'
-                                }}>(Respuesta inmediata)</Box>
+                                }}>({t("pages.dashboard.sections.operations.operation2.subtitle")})</Box>
                         </Box>
                     </Grid>
                     <Grid sx={{
@@ -294,11 +297,11 @@ export default function DashboardPage() {
                             <Box sx={{
                                 fontSize: '21px',
                                 color: '#00143A'
-                            }}>Pagar Impuestos</Box>
+                            }}>{t("pages.dashboard.sections.operations.operation3.title")}</Box>
                             <Box
                                 sx={{
                                     color: '#9E9E9E'
-                                }}>(En cualquier divisa)</Box>
+                                }}>({t("pages.dashboard.sections.operations.operation3.subtitle")})</Box>
                         </Box>
                     </Grid>
                 </Grid>

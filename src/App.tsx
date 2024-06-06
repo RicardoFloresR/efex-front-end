@@ -6,6 +6,25 @@ import Box from '@mui/material/Box';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import SideMenu from "./components/side-menu/side-menu.tsx"
 import MainFrame from "./components/main-frame/main-frame";
+import i18next from 'i18next';
+import global_en from './translations/en/global.json';
+import global_es from './translations/es/global.json';
+import {I18nextProvider} from "react-i18next";
+
+i18next.init({
+    interpolation: {escapeValue: false},
+    lng: "es",
+    resources: {
+        en: {
+            global: global_en
+        },
+        es: {
+            global: global_es
+        }
+    }
+});
+
+
 
 // Augment the palette to include an ochre color
 declare module '@mui/material/styles' {
@@ -38,15 +57,17 @@ const theme = createTheme({
 export default  function App() {
 
   return (
-    <ThemeProvider theme={theme}>
-        <Box
-            sx={{
-                display: 'flex',
-                flexWrap: 'wrap'
-            }}>
-            <SideMenu/>
-            <MainFrame />
-        </Box>
-    </ThemeProvider>
+    <I18nextProvider i18n={i18next}>
+        <ThemeProvider theme={theme}>
+            <Box
+                sx={{
+                    display: 'flex',
+                    flexWrap: 'wrap'
+                }}>
+                <SideMenu/>
+                <MainFrame />
+            </Box>
+        </ThemeProvider>
+    </I18nextProvider>
   )
 }

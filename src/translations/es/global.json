@@ -1,0 +1,81 @@
+{
+  "header": {
+    "message": "Last access"
+  },
+  "side-menu": {
+    "option1": "Dashboard",
+    "option2": "Ingresos",
+    "option3": "Egresos",
+    "option4": "Contactos",
+    "option5": "Seguridad",
+    "button": "Refiere y Gana"
+  },
+  "pages": {
+    "dashboard": {
+      "title": "Dashboard",
+      "sections": {
+        "summary": {
+          "title": "Resumen",
+          "income": {
+            "title": "Ingresos",
+            "income1": "Ingresos por Nómina",
+            "income2": "Transferencias Recibidas",
+            "income3": "Cash Back"
+          },
+          "expenses": {
+            "title": "Egresos",
+            "expense1": "Pagos con TDD",
+            "expense2": "Pagos Domiciliados",
+            "expense3": "Pagos de Tarjetas"
+          },
+          "graph": {
+            "x-label": "Monto ",
+            "y-labels": {
+              "0": "Ingresos",
+              "1": "Egresos"
+            }
+          }
+        },
+        "balance": {
+          "title": "Balances",
+          "table": {
+            "headers": {
+              "currency": "Moneda",
+              "amount": "Cantidad",
+              "options": "Opciones"
+            },
+            "rows": {
+              "currencies": {
+                "usd": "Dólar Estadounidense (USD)",
+                "mxn": "Peso Mexicano (MXN)",
+                "cop": "Peso Colombiano"
+              },
+              "combined-balance": "Balance Combinado"
+            },
+            "options": {
+              "option1": "Enviar Pago",
+              "option2": "Añadir Fondos",
+              "option3": "Convertir",
+              "option4": "Retiros"
+            }
+          }
+        },
+        "operations": {
+          "title": "Operaciones",
+          "operation1": {
+            "title": "Crédito para adelanto",
+            "subtitle": "Pago a proveedores"
+          },
+          "operation2": {
+            "title": "Solicitar Crédito",
+            "subtitle": "Respuesta inmediata"
+          },
+          "operation3": {
+            "title": "Pagar Impuestos",
+            "subtitle": "En cualquier divisa"
+          }
+        }
+      }
+    }
+  }
+}

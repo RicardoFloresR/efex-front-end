@@ -1,0 +1,81 @@
+{
+  "header": {
+    "message": "Last access"
+  },
+  "side-menu": {
+    "option1": "Dashboard",
+    "option2": "Income",
+    "option3": "Expenses",
+    "option4": "Contacts",
+    "option5": "Security",
+    "button": "Refer and Win"
+  },
+  "pages": {
+    "dashboard": {
+      "title": "Dashboard",
+      "sections": {
+        "summary": {
+          "title": "Summary",
+          "income": {
+            "title": "Income",
+            "income1": "Payroll income",
+            "income2": "Transfers Received",
+            "income3": "Cash Back"
+          },
+          "expenses": {
+            "title": "expenses",
+            "expense1": "Payments with DC",
+            "expense2": "Direct debit payments",
+            "expense3": "Cards payment"
+          },
+          "graph": {
+            "x-label": "Amount",
+            "y-labels": {
+              "0": "Income",
+              "1": "Expenses"
+            }
+          }
+        },
+        "balance": {
+          "title": "Balance",
+          "table": {
+            "headers": {
+              "currency": "Currency",
+              "amount": "Amount",
+              "options": "options"
+            },
+            "rows": {
+              "currencies": {
+                "usd": "American Dollar (USD)",
+                "mxn": "Mexican Peso (MXN)",
+                "cop": "Colombian Peso"
+              },
+              "combined-balance": "Combined Balance"
+            },
+            "options": {
+              "option1": "Send Payment",
+              "option2": "Add Funds",
+              "option3": "Exchange",
+              "option4": "Withdrawal"
+            }
+          }
+        },
+        "operations": {
+          "title": "Operations",
+          "operation1": {
+            "title": "Advance Credit",
+            "subtitle": "Payment to suppliers"
+          },
+          "operation2": {
+            "title": "Apply For Credit",
+            "subtitle": "Immediate response"
+          },
+          "operation3": {
+            "title": "Pay Taxes",
+            "subtitle": "With any currency"
+          }
+        }
+      }
+    }
+  }
+}
